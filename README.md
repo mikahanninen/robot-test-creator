@@ -16,14 +16,14 @@ rtc -i tests.xlsx
 
 ## Examples
 
-Excel Example.
+Excel Example (tests.xlsx)
 
 ![Excel example](excel_example.png)
 
-Suite1
+generated suite1.robot
 
 ![Suite1 example](suite1.png)
 
-Suite2
+generated suite2.robot
 
 ![Suite2 example](suite2.png)
