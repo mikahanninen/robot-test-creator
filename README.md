@@ -26,4 +26,4 @@ Suite1
 
 Suite2
 
-![Suite2 example](suite1.png)
+![Suite2 example](suite2.png)

@@ -3,18 +3,13 @@ Documentation  Created from sheet suite2 of tests.xlsx
 
 *** Test Cases ***
 Checking Available Flights
-    Open Product Page    blue shirt
-    Add To Shopping Cart     5
-    Validate Shopping Cart Contents    blue shirt    5
+    Open Flights Page
+    Check Flights To    Dublin
+    Check Flights To    New York
 
 *** Keywords ***
-Open Product Page
+Open Flights Page
+	No Operation
+Check Flights To
 	[Arguments]    ${arg1}
 	Log    ${arg1}
-Add To Shopping Cart 
-	[Arguments]    ${arg1}
-	Log    ${arg1}
-Validate Shopping Cart Contents
-	[Arguments]    ${arg1}    ${arg2}
-	Log    ${arg1}
-	Log    ${arg2}
