@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "robot-test-creator"
-version = "0.1.1"
+version = "1.0.0"
 description = ""
 authors = ["Mika Hänninen <mika.hanninen@gmail.com>"]
 license = "MIT"
@@ -11,12 +11,12 @@ keywords = ["robotframework", "tool"]
 rtc = "robot_test_creator.excel2suites:main"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-rpa-framework = "^0.10.1"
-click = "^7.1.2"
+python = "^3.9"
+rpaframework = ">=28.0.0"
+click = "^8.1.2"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
