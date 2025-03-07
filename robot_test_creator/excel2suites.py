@@ -24,6 +24,8 @@ def main(input_excel):
                 tests_text += testcasename
                 testcases.append(testcasename)
             else:
+                if not row["steps"]:
+                    continue
                 keyword_name = row["steps"].title().replace(" ", "_")
                 tests_text += f"{' '*4}{keyword_name.replace('_', ' ')}"
                 if keyword_name not in keywords.keys():

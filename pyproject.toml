@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "robot-test-creator"
-version = "1.0.0"
+version = "1.0.1"
 description = ""
 authors = ["Mika Hänninen <mika.hanninen@gmail.com>"]
 license = "MIT"
