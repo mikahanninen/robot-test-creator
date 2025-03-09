@@ -103,6 +103,8 @@ def main(input_excel, output_dir):
             r_type = run_types[run_type]["columns"][0]
             if row[r_type]:
                 testcasename = row[r_type].title()
+                if len(testcases) > 0:
+                    tests_text += "\n"
                 tests_text += testcasename
                 testcases.append(testcasename)
                 current_keyword = None
@@ -193,7 +195,7 @@ def main(input_excel, output_dir):
                 for kw, val in keywords.items():
                     robotfile.write(f'\n{kw.replace("_", " ")}')
                     if val > 0:
-                        robotfile.write("\n\t[Arguments]")
+                        robotfile.write(f"\n{' '*4}[Arguments]")
                         for idx in range(1, val + 1):
                             robotfile.write(f"{' '*4}${{arg{idx}}}")
                         robotfile.write("\n")
@@ -212,7 +214,7 @@ def main(input_excel, output_dir):
                                         f"{' '*4}{manual_step}    # manual step\n"
                                     )
                         for idx in range(1, val + 1):
-                            robotfile.write(f"\tLog{' '*4}${{arg{idx}}}\n")
+                            robotfile.write(f"{' '*4}Log{' '*4}${{arg{idx}}}\n")
                     else:
                         robotfile.write("\n")
                         # Add manual steps as comments if they exist
@@ -229,7 +231,8 @@ def main(input_excel, output_dir):
                                     robotfile.write(
                                         f"{' '*4}{manual_step}    # manual step\n"
                                     )
-                        robotfile.write("\tNo Operation\n")
+                        else:
+                            robotfile.write(f"{' '*4}No Operation\n")
 
 
 if __name__ == "__main__":

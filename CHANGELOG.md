@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.1] - 2025-03-09
+
+### Fixed
+
+- Converted any tabs to spaces in generated .robot files
+
 ## [1.1.0] - 2025-03-09
 
 ### Added
