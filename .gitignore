@@ -45,3 +45,7 @@ tests/*.xml
 # TODO: Fix somehow
 *.log
 temp
+
+# Robot Test Creator
+*.robot
+**/~*
