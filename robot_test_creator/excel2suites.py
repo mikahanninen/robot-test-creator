@@ -54,7 +54,11 @@ def process_arguments(row, tests_text, variables, variable_index):
 @click.option(
     "--output_dir", "-o", default=".", help="Output directory for Robot files"
 )
-def main(input_excel, output_dir):
+@click.option(
+    "--no-title-case", "-nt", is_flag=True, help="Disable title case for names"
+)
+def main(input_excel, output_dir, no_title_case):
+    print(f"Title case disabled: {no_title_case}")
     library = Files()
     library.open_workbook(input_excel)
     sheets = library.list_worksheets()
@@ -102,7 +106,7 @@ def main(input_excel, output_dir):
         for row in table.iter_dicts():
             r_type = run_types[run_type]["columns"][0]
             if row[r_type]:
-                testcasename = row[r_type].title()
+                testcasename = row[r_type] if no_title_case else row[r_type].title()
                 if len(testcases) > 0:
                     tests_text += "\n"
                 tests_text += testcasename
@@ -136,7 +140,9 @@ def main(input_excel, output_dir):
                         keyword_manual_steps[current_keyword].append(manual_step_text)
                     continue
 
-                keyword_name = row["steps"].title().replace(" ", "_")
+                keyword_name = (
+                    row["steps"] if no_title_case else row["steps"].title()
+                ).replace(" ", "_")
                 current_keyword = keyword_name
                 tests_text += f"{' '*4}{keyword_name.replace('_', ' ')}"
 
