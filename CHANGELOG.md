@@ -11,11 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Parameter `--no-title-case/-nt` flag to prevent title casing test case and keywords names
 
-### Fixed
-
-- Converted any tabs to spaces in generated .robot files
-- Do not add `No Operation` to the keywords which have steps
-
 ## [1.1.1] - 2025-03-09
 
 ### Fixed
